@@ -6,6 +6,8 @@ public class Player_Control : MonoBehaviour {
     //Player movement variables
     public int MoveSpeed;
     public float JumpHeight;
+    public int directon;
+
     //
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -22,15 +24,37 @@ public class Player_Control : MonoBehaviour {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
     // Update is called once per frame
-	void Update () {
+    void Update()
+    {
         //This code makes the character jump
-        if (Input.GetKeyDown(KeyCode.Space) && grounded) {
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
             Jump();
 
+
         }
-	}
+        if (Input.GetKey(KeyCode.A))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+        }
+        if (Input.GetKey(KeyCode.D)) {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+        }
+
+        if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) {
+            
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+
+            
+        }
+
+
+    }
     public void Jump() {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
 
     }
+ 
 }
