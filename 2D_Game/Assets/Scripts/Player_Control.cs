@@ -14,6 +14,9 @@ public class Player_Control : MonoBehaviour {
     public LayerMask whatIsGround;
     private bool grounded;
 
+    private bool doubleJumped;
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -26,13 +29,23 @@ public class Player_Control : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
         //This code makes the character jump
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
+
             Jump();
 
-
         }
+
+        if(grounded) {
+            doubleJumped = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && !doubleJumped && !grounded) {
+            Jump();
+            doubleJumped = true;
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
