@@ -17,7 +17,7 @@ public class CheckPoint : MonoBehaviour {
         
     }
     void OnTriggerEnter2D(Collider2D theObject) {
-        if(theObject.name = "PC") {
+        if(theObject.name == "PC") {
             levelManager.currentCheckPoint = gameObject;
             Debug.Log("Activated Checkpoint" + transform.position);
         }

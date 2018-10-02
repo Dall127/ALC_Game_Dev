@@ -11,6 +11,9 @@ public class LevelManager : MonoBehaviour {
     //Respawn Delay
     public float respawnDelay;
 
+    //point penalty on death
+    public int pointPenaltyOnDeath;
+
     //store gravity value
     private float gravityStore;
 
@@ -19,21 +22,22 @@ public class LevelManager : MonoBehaviour {
         PC = FindObjectOfType<Rigidbody2D>();
 
 	}
+
+
 	
 	// Update is called once per frame
-	void Update () {
+	public void ReswpawnPlayer () {
         //generate death particle 
-        Instantiate(deathParticle, PC.transform.position, PC);
-
+        StartCoroutine("ReswpanwPlayerCo");
 	}
     public IEnumerator RespawnPlayerCo() {
         //Generate Death Particle
         Instantiate(deathParticle, PC.transform.position, PC.transform.rotation);
         //hide Player 
-        PC.enabled = false;
+        //PC.enabled = false;
         PC.GetComponent<Renderer>().enabled = false;
         //Gravtiy Reset
-        gravityStore = PC.GetComponent<Rigidbody2D>().gravityScale;
+        gravityStore = PC.GetComponent<Rigidbody2D>().gravityScale; 
         PC.GetComponent<Rigidbody2D>().gravityScale = 0f;
         PC.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         //Point Penalty
@@ -47,7 +51,14 @@ public class LevelManager : MonoBehaviour {
         //Match Players transform postion
         PC.transform.position = currentCheckPoint.transform.position;
         //showPlayer
+        //PC.disabled;
+        PC.GetComponent<Renderer>().enabled = true;
+        Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 
 
     }
+	private void Update()
+	{
+		
+	}
 }
