@@ -26,9 +26,9 @@ public class LevelManager : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	public void ReswpawnPlayer () {
+	public void RespawnPlayer () {
         //generate death particle 
-        StartCoroutine("ReswpanwPlayerCo");
+        StartCoroutine("RespawnPlayerCo");
 	}
     public IEnumerator RespawnPlayerCo() {
         //Generate Death Particle
@@ -53,6 +53,8 @@ public class LevelManager : MonoBehaviour {
         //showPlayer
         //PC.disabled;
         PC.GetComponent<Renderer>().enabled = true;
+        PC.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
         Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 
 
