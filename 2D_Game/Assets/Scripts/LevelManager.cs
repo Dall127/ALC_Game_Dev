@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
     public GameObject currentCheckPoint;
-    private Rigidbody2D PC;
+    public Rigidbody2D PC;
     //Patricles
     public GameObject deathParticle;
     public GameObject respawnParticle;
@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        PC = FindObjectOfType<Rigidbody2D>();
+
 
 	}
 
