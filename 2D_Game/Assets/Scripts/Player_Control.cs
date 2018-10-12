@@ -13,13 +13,15 @@ public class Player_Control : MonoBehaviour {
     public float groundCheckRadius;
     public LayerMask whatIsGround;
     private bool grounded;
-
+    private SpriteRenderer mySpriteRenderer;
     private bool doubleJumped;
-
+    public int GetDirection() {
+        return directon;
+    }
 
 	// Use this for initialization
 	void Start () {
-		
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
     private void FixedUpdate()
@@ -48,10 +50,13 @@ public class Player_Control : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.A))
         {
+            mySpriteRenderer.flipY = true;
+            directon = -1;
             GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         }
         if (Input.GetKey(KeyCode.D)) {
+            directon = 1;
             GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         }
