@@ -14,7 +14,6 @@ public class KillPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
     void OnTriggerEnter2D(Collider2D theObject) {
-        Debug.Log("detecting player");
 
         if(theObject.name == "PC") {
             Debug.Log("running kill script");

@@ -9665,6 +9665,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &859148610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 859148611}
+  m_Layer: 0
+  m_Name: FirePointL
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &859148611
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859148610}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.129, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1086932846}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &888013140
 GameObject:
   m_ObjectHideFlags: 0
@@ -9739,6 +9767,7 @@ GameObject:
   - component: {fileID: 906674399}
   - component: {fileID: 906674402}
   - component: {fileID: 906674403}
+  - component: {fileID: 906674404}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -9835,6 +9864,7 @@ MonoBehaviour:
   EnemyDeath: {fileID: 89290335}
   ProjectileParticle: {fileID: 89290335}
   PointsForKill: 0
+  Player_Control: {fileID: 0}
 --- !u!50 &906674403
 Rigidbody2D:
   serializedVersion: 4
@@ -9855,6 +9885,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &906674404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906674398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692302b98555e47e8a366fa12feb3037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  Player: {fileID: 1086932843}
+  EnemyDeath: {fileID: 1399445811}
+  ProjectileParticle: {fileID: 0}
+  PointsForKill: 0
+  Player_Control: {fileID: 1086932847}
 --- !u!1 &925036751
 GameObject:
   m_ObjectHideFlags: 0
@@ -10080,6 +10127,7 @@ Transform:
   - {fileID: 244053270}
   - {fileID: 44458887}
   - {fileID: 1988949305}
+  - {fileID: 859148611}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10125,13 +10173,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1086932842}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 810e6d505afaf41489b486764e54c5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1988949305}
+  firePointL: {fileID: 859148611}
+  firePointR: {fileID: 1988949305}
   projectile: {fileID: 906674398}
+  Player_Control: {fileID: 1086932847}
 --- !u!1 &1128608163
 GameObject:
   m_ObjectHideFlags: 0
@@ -10926,9 +10976,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1988949305}
   m_Layer: 0
-  m_Name: FirePoint
+  m_Name: FirePointR
   m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10939,7 +10989,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988949304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.11, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086932846}

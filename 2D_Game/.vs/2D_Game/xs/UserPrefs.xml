@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{DDCB4815-71A6-2267-59EE-460CA8A9004F}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player_Control.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerShoot.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player_Control.cs" Line="36" Column="13" />
-      <File FileName="Assets/Scripts/ScoreManager.cs" Line="18" Column="5" />
+      <File FileName="Assets/Scripts/Player_Control.cs" Line="53" Column="29" />
+      <File FileName="Assets/Scripts/ScoreManager.cs" Line="30" Column="29" />
       <File FileName="Assets/Scripts/CoinPickup.cs" Line="4" Column="1" />
       <File FileName="Assets/Scripts/EnemyPatrol.cs" Line="52" Column="9" />
       <File FileName="Assets/Scripts/CheckPoint.cs" Line="21" Column="57" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="44" Column="54" />
-      <File FileName="Assets/Scripts/KillPlayer.cs" Line="17" Column="17" />
-      <File FileName="Assets/Scripts/PlayerShoot.cs" Line="17" Column="46" />
-      <File FileName="Assets/Scripts/Projectile.cs" Line="6" Column="21" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="44" Column="21" />
+      <File FileName="Assets/Scripts/KillPlayer.cs" Line="7" Column="24" />
+      <File FileName="Assets/Scripts/PlayerShoot.cs" Line="18" Column="42" />
+      <File FileName="Assets/Scripts/Projectile.cs" Line="23" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
