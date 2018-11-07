@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour {
     public GameObject ProjectileParticle;
     public int PointsForKill;
     public Player_Control Player_Controller;
+    public LayerMask WhatIsWall;
+
 	// Use this for initialization
 
 	private void Start()
@@ -32,6 +34,10 @@ public class Projectile : MonoBehaviour {
             ScoreManager.AddPoints(PointsForKill);
             Destroy(gameObject);
             Instantiate(ProjectileParticle, transform.position, transform.rotation);
+
+        }
+        if (theObject.gameObject.layer.ToString() == "Wall") {
+            Destroy(gameObject);
 
         }
 
