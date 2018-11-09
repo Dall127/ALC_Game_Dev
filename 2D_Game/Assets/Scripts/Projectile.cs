@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour {
 
         }
         if (theObject.gameObject.layer.ToString() == "Wall") {
+            
             Destroy(gameObject);
 
         }

@@ -15,6 +15,7 @@ TextureImporter:
     21300020: right
     21300022: pillar_top
     21300024: Pillar_bottom
+    21300026: water
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -343,13 +344,33 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 4d2c8bdf454ec4572bd6ff81fb2ffee2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca42316a60c72458aad05b69ccc3b4e9
       vertices: []
       indices: 
       edges: []
