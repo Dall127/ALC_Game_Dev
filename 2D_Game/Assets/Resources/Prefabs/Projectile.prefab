@@ -95,7 +95,12 @@ MonoBehaviour:
   EnemyDeath: {fileID: 0}
   ProjectileParticle: {fileID: 0}
   PointsForKill: 2
-  Player_Control: {fileID: 0}
+  Player_Controller: {fileID: 0}
+  WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
+  TimeOut: 0
+  PC: {fileID: 0}
 --- !u!114 &114594151696930162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +117,12 @@ MonoBehaviour:
   EnemyDeath: {fileID: 0}
   ProjectileParticle: {fileID: 0}
   PointsForKill: 0
-  Player_Control: {fileID: 0}
+  Player_Controller: {fileID: 0}
+  WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
+  TimeOut: 0
+  PC: {fileID: 0}
 --- !u!212 &212372570790749172
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour {
     public int PointsForKill;
     public Player_Control Player_Controller;
     public LayerMask WhatIsWall;
+    public int TimeOut;
+    public GameObject PC;
 
 	// Use this for initialization
 
@@ -18,7 +20,14 @@ public class Projectile : MonoBehaviour {
         if (Player_Controller.GetDirection() == -1)
         {
             Speed = -Speed;
+
+
+
         }
+        PC = GameObject.Find("PC");
+        EnemyDeath = Resources.Load("Prefabs/Enemy_Death") as GameObject;
+        ProjectileParticle = Resources.Load("Prefabs/Respawn_Particle") as GameObject;
+        Destroy(gameObject, TimeOut);
 	}
 	// Update is called once per frame
 	void Update () {
@@ -36,16 +45,14 @@ public class Projectile : MonoBehaviour {
             Instantiate(ProjectileParticle, transform.position, transform.rotation);
 
         }
-        if (theObject.gameObject.layer.ToString() == "Wall") {
-            
-            Destroy(gameObject);
-
-        }
-
-
 
 
     }
+	private void OnCollisionEnter2D(Collision2D theObject)
+	{
+        Instantiate(ProjectileParticle, transform.position, transform.rotation);
+        Destroy(gameObject);
+	}
 
 }
 	

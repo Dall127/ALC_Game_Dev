@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
     public GameObject currentCheckPoint;
     public Rigidbody2D PC;
+    public GameObject PCOb;
     //Patricles
     public GameObject deathParticle;
     public GameObject respawnParticle;
@@ -17,9 +18,13 @@ public class LevelManager : MonoBehaviour {
     //store gravity value
     private float gravityStore;
 
+   
+
+
 	// Use this for initialization
 	void Start () {
-
+        PCOb = GameObject.Find("PC");
+        PC = GameObject.Find("PC").GetComponent<Rigidbody2D>();
 
 	}
 
@@ -34,6 +39,7 @@ public class LevelManager : MonoBehaviour {
         //Generate Death Particle
         Instantiate(deathParticle, PC.transform.position, PC.transform.rotation);
         //hide Player 
+        PCOb.SetActive(false);
         //PC.enabled = false;
         PC.GetComponent<Renderer>().enabled = false;
         //Gravtiy Reset
@@ -52,9 +58,9 @@ public class LevelManager : MonoBehaviour {
         PC.transform.position = currentCheckPoint.transform.position;
         //showPlayer
         //PC.disabled;
+        PCOb.SetActive(true);
         PC.GetComponent<Renderer>().enabled = true;
         PC.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
         Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 
 

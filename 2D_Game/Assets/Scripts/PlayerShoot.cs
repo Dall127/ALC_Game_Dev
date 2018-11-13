@@ -7,8 +7,10 @@ public class PlayerShoot : MonoBehaviour {
     public Transform firePointR;
     public GameObject projectile;
     public Player_Control Player_Control;
+
 	// Use this for initialization
 	void Start () {
+        projectile = Resources.Load("Prefabs/Projectile") as GameObject;
 		
 	}
 	
