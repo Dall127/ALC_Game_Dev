@@ -17,6 +17,15 @@ public class Projectile : MonoBehaviour {
 
 	private void Start()
 	{
+        PC = GameObject.Find("PC");
+        EnemyDeath = Resources.Load("Prefabs/Enemy_Death") as GameObject;
+        ProjectileParticle = Resources.Load("Prefabs/Respawn_Particle") as GameObject;
+        Player_Controller = FindObjectOfType<Player_Control>();
+        Destroy(gameObject, TimeOut);
+
+
+
+
         if (Player_Controller.GetDirection() == -1)
         {
             Speed = -Speed;
@@ -24,10 +33,8 @@ public class Projectile : MonoBehaviour {
 
 
         }
-        PC = GameObject.Find("PC");
-        EnemyDeath = Resources.Load("Prefabs/Enemy_Death") as GameObject;
-        ProjectileParticle = Resources.Load("Prefabs/Respawn_Particle") as GameObject;
-        Destroy(gameObject, TimeOut);
+
+
 	}
 	// Update is called once per frame
 	void Update () {
