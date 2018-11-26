@@ -25,6 +25,10 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
         PCOb = GameObject.Find("PC");
         PC = GameObject.Find("PC").GetComponent<Rigidbody2D>();
+        respawnParticle = Resources.Load("Prefabs/Respawn_Particle") as GameObject;
+        deathParticle = Resources.Load("Prefabs/Enemy_Death") as GameObject;
+
+
 
 	}
 

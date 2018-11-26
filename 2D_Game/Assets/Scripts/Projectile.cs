@@ -52,6 +52,13 @@ public class Projectile : MonoBehaviour {
             Instantiate(ProjectileParticle, transform.position, transform.rotation);
 
         }
+        else if (theObject.tag == "Player") {
+            
+        }
+        else {
+             Destroy(gameObject);
+
+        }
 
 
     }
