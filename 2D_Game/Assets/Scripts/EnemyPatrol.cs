@@ -52,11 +52,6 @@ public class EnemyPatrol : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);        
         }
     }
-    private void OnCollisionEnter2D(Collision2D theObject) {
-        if (theObject.ToString == "Enemy") {
-            
-            
-        }
-    }
+
 }
         

@@ -50,12 +50,14 @@ public class Player_Control : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.A))
         {
-            mySpriteRenderer.flipY = true;
+            mySpriteRenderer.flipX = true;
             directon = -1;
             GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         }
         if (Input.GetKey(KeyCode.D)) {
+            mySpriteRenderer.flipX = false;
+
             directon = 1;
             GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
