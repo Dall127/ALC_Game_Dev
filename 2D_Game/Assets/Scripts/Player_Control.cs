@@ -9,6 +9,7 @@ public class Player_Control : MonoBehaviour {
     public int directon;
 
     //
+    public Animator animator;
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
@@ -22,6 +23,8 @@ public class Player_Control : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isJumping", false);
 	}
 
     private void FixedUpdate()
@@ -41,28 +44,40 @@ public class Player_Control : MonoBehaviour {
         }
 
         if(grounded) {
+            animator.SetBool("isJumping", false);
             doubleJumped = false;
         }
         if (Input.GetKeyDown(KeyCode.Space) && !doubleJumped && !grounded) {
             Jump();
             doubleJumped = true;
+            animator.SetBool("isJumping", true);
+
         }
 
         if (Input.GetKey(KeyCode.A))
         {
+            animator.SetBool("isWalking", true);
+
             mySpriteRenderer.flipX = true;
             directon = -1;
             GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
+        }
+        else if (Input.GetKeyUp(KeyCode.A)) 
+        {
+            animator.SetBool("isWalking", false);
         }
         if (Input.GetKey(KeyCode.D)) {
             mySpriteRenderer.flipX = false;
+            animator.SetBool("isWalking", true);
 
             directon = 1;
             GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         }
-
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            animator.SetBool("isWalking", false);
+        }
         if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) {
             
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
@@ -73,6 +88,7 @@ public class Player_Control : MonoBehaviour {
 
     }
     public void Jump() {
+        animator.SetBool("isJumping", true);
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
 
     }

@@ -40127,6 +40127,7 @@ MonoBehaviour:
   MoveSpeed: 5
   JumpHeight: 6
   directon: 0
+  animator: {fileID: 1086932848}
   groundCheck: {fileID: 244053270}
   groundCheckRadius: 0.5
   whatIsGround:
@@ -44904,6 +44905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1235717495}
   - component: {fileID: 1235717494}
+  - component: {fileID: 1235717496}
   m_Layer: 0
   m_Name: portal_off (1)
   m_TagString: Untagged
@@ -44969,6 +44971,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1235717496
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235717493}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12568434, y: 0.27413508}
+  m_Size: {x: 17.529394, y: 8.0245905}
+  m_Direction: 1
 --- !u!1 &1235824432
 GameObject:
   m_ObjectHideFlags: 0
