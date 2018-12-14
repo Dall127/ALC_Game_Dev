@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour {
+    public int levelToLoad;
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +15,9 @@ public class LevelChanger : MonoBehaviour {
 	void Update () {
 		
 	}
-	private void OnCollisionEnter2D(Collision2D theObject) 
-	{
-		
+    private void OnCollisionEnter2D(Collision2D theObject) {
+
+          SceneManager.LoadScene(levelToLoad);
+
 	}
 }

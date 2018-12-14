@@ -44965,7 +44965,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1235717493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.17, y: 1.92, z: 0}
+  m_LocalPosition: {x: 42.17, y: 1.67, z: 0}
   m_LocalScale: {x: 0.22305255, y: 0.12267877, z: 0.22305252}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49426,7 +49426,7 @@ GameObject:
   - component: {fileID: 1381727838}
   - component: {fileID: 1381727837}
   - component: {fileID: 1381727839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rock_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
