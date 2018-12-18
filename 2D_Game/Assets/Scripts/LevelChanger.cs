@@ -15,9 +15,14 @@ public class LevelChanger : MonoBehaviour {
 	void Update () {
 		
 	}
-    private void OnCollisionEnter2D(Collision2D theObject) {
+    private void OnCollisionEnter2D(Collision2D theObject)
+    {
+        if (theObject.gameObject.name == "PC")
+        {
 
-          SceneManager.LoadScene(levelToLoad);
+            SceneManager.LoadScene(levelToLoad);
 
-	}
+        }
+    }
+
 }

@@ -44906,6 +44906,7 @@ GameObject:
   - component: {fileID: 1235717495}
   - component: {fileID: 1235717494}
   - component: {fileID: 1235717496}
+  - component: {fileID: 1235717497}
   m_Layer: 0
   m_Name: portal_off (1)
   m_TagString: Untagged
@@ -44986,6 +44987,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.12568434, y: 0.27413508}
   m_Size: {x: 17.529394, y: 8.0245905}
   m_Direction: 1
+--- !u!114 &1235717497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235717493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724430eeca00a4e4cb066527e69bec78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: 2
 --- !u!1 &1235824432
 GameObject:
   m_ObjectHideFlags: 0
