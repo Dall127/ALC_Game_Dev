@@ -22,6 +22,8 @@ public class Player_Control : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         animator.SetBool("isWalking", false);
         animator.SetBool("isJumping", false);
@@ -34,7 +36,9 @@ public class Player_Control : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
+
+
+
         //This code makes the character jump
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
@@ -67,6 +71,7 @@ public class Player_Control : MonoBehaviour {
             animator.SetBool("isWalking", false);
         }
         if (Input.GetKey(KeyCode.D)) {
+            Debug.Log("Right");
             mySpriteRenderer.flipX = false;
             animator.SetBool("isWalking", true);
 
